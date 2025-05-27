@@ -75,19 +75,42 @@
         opacity: 0;
       }
     }
+
+    .hidden {
+      opacity: 0;
+      transition: opacity 1s ease-in;
+      height: 0;
+      overflow: hidden;
+    }
+    #secretMessage.show {
+      opacity: 1;
+      height: auto;
+    }
   </style>
 </head>
 <body>
 
   <h1>FELIZ DIA DOS NAMORADOS ❤️</h1>
   <img src="foto.jpg" alt="Nossa Foto">
-  <p>AMOR DA MINHA VIDA!</p>
   <p>TE AMO MUITO MEU AMOR ❤️</p>
+
+  <button id="revealBtn" style="background: none; border: none; font-size: 2em; cursor: pointer; margin-top: 20px;">💘 Clique aqui</button>
+
+  <p id="secretMessage" class="hidden" style="font-size: 1.5em; color: #d63384; margin-top: 15px;">
+    Você é o amor da minha vida! Quero passar minha vida inteira ao seu lado 💖
+  </p>
 
   <div class="heart" style="left: 20%;">❤️</div>
   <div class="heart" style="left: 50%; animation-delay: 2s;">❤️</div>
   <div class="heart" style="left: 75%; animation-delay: 4s;">❤️</div>
   <div class="heart" style="left: 35%; animation-delay: 1.5s;">❤️</div>
 
+  <script>
+    document.getElementById("revealBtn").addEventListener("click", function () {
+      const msg = document.getElementById("secretMessage");
+      msg.classList.add("show");
+      this.style.display = "none";
+    });
+  </script>
 </body>
 </html>
