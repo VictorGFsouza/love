@@ -1,0 +1,86 @@
+body {
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+.background {
+  background: linear-gradient(to right, #fbc2eb, #a6c1ee);
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.card {
+  width: 300px;
+  height: 500px;
+  perspective: 1000px;
+  cursor: pointer;
+  position: relative;
+  transform-style: preserve-3d;
+}
+
+.front, .inside {
+  background: white;
+  border-radius: 20px;
+  padding: 20px;
+  box-shadow: 0 15px 25px rgba(0, 0, 0, 0.2);
+  backface-visibility: hidden;
+  transition: transform 0.6s;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  box-sizing: border-box;
+}
+
+.front {
+  transform: rotateY(0deg);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.inside {
+  transform: rotateY(180deg);
+  text-align: center;
+  overflow-y: auto;
+}
+
+.card.open .front {
+  transform: rotateY(-180deg);
+}
+
+.card.open .inside {
+  transform: rotateY(0deg);
+}
+
+.foto {
+  width: 100%;
+  border-radius: 15px;
+  margin-bottom: 15px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.botao-musica {
+  display: inline-block;
+  margin-top: 15px;
+  padding: 10px 20px;
+  background-color: #ffb6c1;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 10px;
+  font-weight: bold;
+  transition: background-color 0.3s;
+}
+
+.botao-musica:hover {
+  background-color: #ff6f91;
+}
+
+.assinatura {
+  display: block;
+  margin-top: 20px;
+  font-style: italic;
+  color: #555;
+}
